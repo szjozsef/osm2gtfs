@@ -30,7 +30,7 @@ class TripsCreator(object):
 
         # Go though all lines
         for line_id, line in sorted(
-            data.routes.iteritems(), key=lambda k: k[1].route_id
+            data.routes.items(), key=lambda k: k[1].route_id
         ):
 
             logging.info(

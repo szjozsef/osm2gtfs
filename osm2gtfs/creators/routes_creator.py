@@ -21,7 +21,7 @@ class RoutesCreator(object):
 
         # Loop through all routes
         for route_osm_id, route in sorted(
-            routes.iteritems(), key=lambda k: k[1].route_id
+            routes.items(), key=lambda k: k[1].route_id
         ):
 
             # Add route information

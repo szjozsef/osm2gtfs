@@ -45,7 +45,7 @@ class OsmConnector(object):
 
         # tags from config file for querying
         self.tags = ""
-        for key, value in self.config["query"].get("tags", {}).iteritems():
+        for key, value in self.config["query"].get("tags", {}).items():
             if isinstance(value, list):
                 value = "^" + "$|^".join(value) + "$"
                 self.tags += ('["' + key + '" ~ "' + value + '"]')
@@ -133,7 +133,7 @@ class OsmConnector(object):
                 route_variants[relation.id] = relation
 
         # Build routes from master relations
-        for rmid, route_master in route_masters.iteritems():
+        for rmid, route_master in route_masters.items():
             itineraries = OrderedDict()
 
             # Build route variant members
@@ -180,7 +180,7 @@ class OsmConnector(object):
             self.routes[str(line.osm_id)] = line
 
         # Build routes from variants (missing master relation)
-        for rvid, route_variant in route_variants.iteritems():
+        for rvid, route_variant in route_variants.items():
             logging.warning("Route (variant) without route_master")
             logging.warning(" https://osm.org/relation/%s", route_variant.id)
             logging.warning(" Please fix in OpenStreetMap")
@@ -448,7 +448,7 @@ class OsmConnector(object):
 
             # Make sure name is not empty
             if "name" not in stop.tags:
-                stop.tags["name"] = "[" + self.stop_no_name + "]"
+                stop.tags["name"] = "[" + self.stop_no_name.decode() + "]"
 
             # Ways don't have a pair of coordinates and need to be calculated
             if osm_type == "way":

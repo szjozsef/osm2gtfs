@@ -11,7 +11,7 @@ class TripsCreatorCrGam(TripsCreator):
         lines = data.get_routes()
 
         # line (osm rounte master | gtfs route)
-        for line_id, line in lines.iteritems():
+        for line_id, line in lines.items():
             # debug
             # print("DEBUG. procesando la línea:", line.name)
 

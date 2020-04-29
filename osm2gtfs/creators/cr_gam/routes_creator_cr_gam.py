@@ -13,7 +13,7 @@ class RoutesCreatorCrGam(RoutesCreator):
         stops = data.get_stops()
 
         # Loop through routes
-        for ref, route in routes.iteritems():
+        for ref, route in routes.items():
             # Replace stop ids with Stop objects
             self._fill_stops(stops["regular"], route)
 
@@ -22,7 +22,7 @@ class RoutesCreatorCrGam(RoutesCreator):
         #      "lineas")
 
         # Loop through all lines (master_routes)
-        for line_ref, line in sorted(routes.iteritems()):
+        for line_ref, line in sorted(routes.items()):
             route = feed.AddRoute(
                 short_name=line.route_id.encode("utf-8"),
                 long_name=line.name,
@@ -66,7 +66,7 @@ class RoutesCreatorCrGam(RoutesCreator):
             sys.stderr.write("Unknown route: " + str(route) + "\n")
 
     def _look_up_stop(self, stop_id, stops):
-        for ref, elem in stops.iteritems():
+        for ref, elem in stops.items():
             if type(elem) is Stop:
                 if ref == stop_id:
                     return elem

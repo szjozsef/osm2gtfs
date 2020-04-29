@@ -9,7 +9,7 @@ setup(
     license="GPLv3",
     keywords="openstreetmap gtfs schedule public-transportation python",
     author="Various collaborators: https://github.com/grote/osm2gtfs/graphs/contributors",
-    install_requires=["attrs", "overpy>=0.4", "transitfeed", "mock", "webcolors"],
+    install_requires=["attrs", "overpy>=0.4", "transitfeed", "mock", "webcolors", "transporthours"],
     packages=find_packages(),
     include_package_data=True,
     entry_points={"console_scripts": ["osm2gtfs = osm2gtfs.osm2gtfs:main"]},

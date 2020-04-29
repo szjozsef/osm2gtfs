@@ -40,7 +40,7 @@ class TripsCreator(object):
                 + line.name
             )
 
-            # Loop through it's itineraries
+            # Loop through its itineraries
             itineraries = line.get_itineraries()
             for itinerary in itineraries:
                 trips_count = 0

@@ -17,9 +17,7 @@ class TripsCreatorGhAccra(TripsCreator):
 
         lines = data.routes
 
-        for route_osm_id, line in sorted(
-            lines.items(), key=lambda k: k[1].route_id
-        ):
+        for route_osm_id, line in sorted(lines.items(), key=lambda k: k[1].route_id):
             if not isinstance(line, Line):
                 continue
             print("Generating schedule for line: " + line.tags["ref"])
@@ -50,11 +48,7 @@ class TripsCreatorGhAccra(TripsCreator):
 
                 if a_route.fr and a_route.to:
                     trip_gtfs.trip_headsign = a_route.to
-                    line_gtfs.route_long_name = (
-                        a_route.fr
-                        + " ↔ "
-                        + a_route.to
-                    )
+                    line_gtfs.route_long_name = a_route.fr + " ↔ " + a_route.to
 
                 DEFAULT_ROUTE_FREQUENCY = 30
                 DEFAULT_TRAVEL_TIME = 120

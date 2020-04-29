@@ -29,10 +29,12 @@ class TripsCreator(object):
         all_trips_count = 0
 
         # Go though all lines
-        for line_id, line in sorted(
-            data.routes.items(), key=lambda k: k[1].route_id
-        ):
-            logging.info("\nGenerating schedule for line: [{}] - {}".format(line.route_id, line.name))
+        for line_id, line in sorted(data.routes.items(), key=lambda k: k[1].route_id):
+            logging.info(
+                "\nGenerating schedule for line: [{}] - {}".format(
+                    line.route_id, line.name
+                )
+            )
 
             # Loop through its itineraries
             itineraries = line.get_itineraries()
@@ -61,7 +63,15 @@ class TripsCreator(object):
                         )
 
                 # Print out status messge about added trips
-                logging.info(" Itinerary: [{} {}] (added {} trips, serving {} stops) - {}".format(itinerary.route_id, itinerary.to, trips_count, len(itinerary.get_stops()), itinerary.osm_url ))
+                logging.info(
+                    " Itinerary: [{} {}] (added {} trips, serving {} stops) - {}".format(
+                        itinerary.route_id,
+                        itinerary.to,
+                        trips_count,
+                        len(itinerary.get_stops()),
+                        itinerary.osm_url,
+                    )
+                )
 
                 all_trips_count += trips_count
 

@@ -83,8 +83,8 @@ class StopsCreator(object):
         field_dict = {
             "stop_id": self._define_stop_id(stop),
             "stop_name": stop_name,
-            "stop_lat": float(stop.lat),
-            "stop_lon": float(stop.lon),
+            "stop_lat": round(float(stop.lat),10),
+            "stop_lon": round(float(stop.lon),10),
             "location_type": stop.location_type,
             "parent_station": parent_station,
         }

@@ -40,8 +40,8 @@ class ScheduleCreator(object):
         schedule_source = self.config.get_schedule_source()
 
         if schedule_source is None:
-            logging.error("No schedule source found.")
-            sys.exit(0)
+            logging.info("No schedule source found. Will use osm or default values")
+            return None
 
         else:
             try:

@@ -32,7 +32,7 @@ class RoutesCreator(object):
                 short_name=self._define_short_name(route),
                 long_name=self._define_long_name(route)
             )
-            gtfs_route.agency_id = feed.GetDefaultAgency().agency_id
+            gtfs_route.agency_id = self._define_route_agency(route, feed).agency_id
             gtfs_route.route_desc = self._define_route_description(route)
             gtfs_route.route_url = self._define_route_url(route)
             gtfs_route.route_color = self._define_route_color(route)
@@ -62,6 +62,9 @@ class RoutesCreator(object):
         Returns the route_id for the use in the GTFS feed.
         Can be easily overridden in any creator.
         """
+        if self.config.get("use_osm_id_as_route_id") \
+            and self.config["use_osm_id_as_route_id"] == "yes":
+            return str(route.osm_id)
         return route.route_id
 
     def _define_short_name(self, route):
@@ -98,6 +101,40 @@ class RoutesCreator(object):
         Can be easily overridden in any creator.
         """
         return route.osm_url
+
+    def _define_route_agency(self, route, feed):
+        """
+        Returns the agency of the route for the use in the GTFS feed.
+        If `use_osm_to_create_agency` parameter is set in config file,
+        will try to use OSM tags to create new agencies.
+        If not, default to the one defined in agency creator.
+        Can be easily overridden in any creator.
+        """
+
+        default_agency = feed.GetDefaultAgency()
+        if self.config.get("use_osm_to_create_agency") is None:
+            return default_agency
+
+        if 'network' in route.tags and route.tags['network']:
+            try:
+                agency = feed.GetAgency(route.tags['network'])
+            except KeyError:
+                agency = feed.AddAgency(route.tags['network'],
+                                        default_agency.agency_url,
+                                        default_agency.agency_timezone,
+                                        agency_id=route.tags['network'])
+                logging.info("Added agency: %s", agency.agency_name)
+                if not agency.Validate():
+                    logging.error("Agency data not valid for %s in line",
+                        route.tags['network'])
+            if 'operator:website' in route.tags and route.tags['operator:website']:
+                agency.agency_url = route.tags['operator:website']
+                if not agency.Validate():
+                    logging.error(
+                        'Url is not valid for agency: %s', agency.agency_url)
+        else:
+            agency = default_agency
+        return agency
 
     def _define_route_color(self, route):
         """

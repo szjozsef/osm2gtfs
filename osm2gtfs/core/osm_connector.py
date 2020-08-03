@@ -635,6 +635,7 @@ class OsmConnector(object):
         shape_sorter = []
         node_geography = {}
 
+        last_roundabout_nodes = []
         for way in ways:
             # Obtain geography (nodes) from original query result set
             nodes = query_result_set.get_ways(way).pop().get_nodes()
@@ -648,6 +649,21 @@ class OsmConnector(object):
 
             if len(shape_sorter) == 0:
                 shape_sorter.extend(way_nodes)
+            elif way_nodes[0] == way_nodes[-1]:
+                # this is a roundabout
+                last_roundabout_nodes = way_nodes
+            elif last_roundabout_nodes:
+                if way_nodes[0] in last_roundabout_nodes:
+                    shape_sorter.extend(way_nodes)
+                elif way_nodes[-1] in last_roundabout_nodes:
+                    shape_sorter.extend(reversed(way_nodes))
+                else:
+                    logging.warning("Route has non-matching ways: https://osm.org/relation/%s",
+                                    route_variant.id)
+                    logging.warning(
+                        "  Problem at: https://osm.org/way/%s", way)
+                    break
+                last_roundabout_nodes = []
             elif shape_sorter[-1] == way_nodes[0]:
                 del shape_sorter[-1]
                 shape_sorter.extend(way_nodes)

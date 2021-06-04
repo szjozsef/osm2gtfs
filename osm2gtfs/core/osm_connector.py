@@ -600,8 +600,6 @@ class OsmConnector(object):
 
             /*  Query for relation elements with role platform */
             node(r:"platform")->.nodes;
-            way(r:"platform");
-            node(w);
 
             /* Select all result sets  */
             ( .nodes;._; );
@@ -609,11 +607,8 @@ class OsmConnector(object):
             /* Return tags for elements */
             );out body;
 
-            /* Select stop area relations */
-            foreach.nodes(
-            rel(bn:"platform")["public_transport"="stop_area"];
-            out body;
-            );""" % (self.tags, self.bbox)
+
+""" % (self.tags, self.bbox)
         logging.info(query_str)
         return api.query(query_str)
 

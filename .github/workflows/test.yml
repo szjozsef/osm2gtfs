@@ -1,0 +1,32 @@
+name: Test osm2gtfs
+
+on:
+  push:
+
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup python version
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python3 -m pip install -e .
+    - name: non regression test br
+      run: python3 -m unittest discover -p 'tests_br*.py'
+    - name: non regression test ci
+      run: python3 -m unittest discover -p 'tests_ci*.py'
+    - name: non regression test cr
+      run: python3 -m unittest discover -p 'tests_cr*.py'
+    - name: non regression test gh
+      run: python3 -m unittest discover -p 'tests_gh*.py'
+    - name: non regression test ni
+      run: python3 -m unittest discover -p 'tests_ni*.py'

@@ -1,13 +1,9 @@
 osm2gtfs
 ========
 
-[![Build Status](https://travis-ci.org/grote/osm2gtfs.svg?branch=master)](https://travis-ci.org/grote/osm2gtfs)
-
 Use public transport data from [OpenStreetMap](http://www.openstreetmap.org/)
-and external schedule information
+and optional external schedule information
 to create a General Transit Feed ([GTFS](https://developers.google.com/transit/gtfs/)).
-
-The official source code repository is at [github.com/grote/osm2gtfs](https://github.com/grote/osm2gtfs).
 
 How does it work?
 -----------------

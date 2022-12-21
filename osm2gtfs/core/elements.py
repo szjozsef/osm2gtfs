@@ -33,8 +33,9 @@ class Line(Element):
 
     route_type = attr.ib(default=None)
     route_desc = attr.ib(default=None)
-    route_color = attr.ib(default="FFFFFF")
+    route_color = attr.ib(default="#FFFFFF")
     route_text_color = attr.ib(default=None)
+    route_bikes_allowed = attr.ib(default=None)
 
     # Related route variants
     _itineraries = attr.ib(default=attr.Factory(list))
@@ -50,6 +51,12 @@ class Line(Element):
         # pylint: disable=unsupported-membership-test,unsubscriptable-object
         if 'ref:colour_tx' in self.tags:
             self.route_text_color = self.tags['ref:colour_tx']
+
+        # pylint: disable=unsupported-membership-test,unsubscriptable-object
+        if 'bicycle' in self.tags:
+            self.route_bikes_allowed = self.tags['bicycle']
+        if 'description' in self.tags:
+            self.route_desc = self.tags['description']
 
         # pylint: disable=unsupported-membership-test,unsubscriptable-object
         if 'route_master' in self.tags:
@@ -115,6 +122,7 @@ class Itinerary(Element):
     via = attr.ib(default=None)
     to = attr.ib(default=None)
     duration = attr.ib(default=None)
+    direction = attr.ib(default=None)
 
     # All stop objects of itinerary
     stops = attr.ib(default=attr.Factory(list))
@@ -134,6 +142,10 @@ class Itinerary(Element):
         # pylint: disable=unsupported-membership-test,unsubscriptable-object
         if 'to' in self.tags:
             self.to = self.tags['to']
+
+        # pylint: disable=unsupported-membership-test,unsubscriptable-object
+        if 'direction' in self.tags:
+            self.direction = self.tags['direction']
 
     def get_stops(self):
         return self.stops
@@ -177,7 +189,7 @@ class Stop(Element):
     """A public transport stop.
 
     In OpenStreetMap this is usually represented as an object of the role
-    "plattform" in the route.
+    "platform" in the route.
 
     """
     lat = attr.ib()

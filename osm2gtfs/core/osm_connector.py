@@ -34,6 +34,16 @@ class OsmConnector(object):
         """
         self.config = config.data
 
+        # Alternative URL
+        self.url = None
+        if "url" in self.config['query']:
+            self.url = self.config['query']['url']
+        self.max_retry_count = 10
+        if "max_retry_count" in self.config['query']:
+            self.max_retry_count = self.config['query']['max_retry_count']
+        self.retry_timeout = 10.0
+        if "retry_timeout" in self.config['query']:
+            self.retry_timeout = self.config['query']['retry_timeout']
         # bbox from config file for querying
         self.bbox = (str(self.config['query']['bbox']["s"]) + "," +
                      str(self.config['query']['bbox']["w"]) + "," +
@@ -332,7 +342,9 @@ class OsmConnector(object):
         # with inheritance https://github.com/python-attrs/attrs/issues/38
         osm_url = "https://osm.org/" + str(
             osm_type) + "/" + str(route_master.id)
-        if 'name' in route_master.tags:
+        if 'name:en' in route_master.tags:
+            name = route_master.tags['name:en']
+        elif 'name' in route_master.tags:
             name = route_master.tags['name']
         elif 'ref' in route_master.tags:
             name = route_master.tags['ref']
@@ -389,7 +401,7 @@ class OsmConnector(object):
 
         # Add ids for stops of this route variant
         for stop_candidate in route_variant.members:
-            if stop_candidate.role == "platform":
+            if str(stop_candidate.role).startswith("platform"):
 
                 if isinstance(stop_candidate, overpy.RelationNode):
                     otype = "node"
@@ -401,7 +413,8 @@ class OsmConnector(object):
                     logging.warning("Unknown type of itinerary member: %s", stop_candidate)
                     continue
 
-                stops.append(otype + "/" + str(stop_candidate.ref))
+               # stops.append(otype + "/" + str(stop_candidate.ref))
+                stops.append({'stop_name': otype + "/" + str(stop_candidate.ref), 'stop_role': stop_candidate.role})
 
         if route_master:
             parent_identifier = osm_type + "/" + str(route_master.id)
@@ -567,7 +580,13 @@ class OsmConnector(object):
         """
         # Query relations of route variants, their masters and geometry
         api = overpy.Overpass()
-        query_str = """(
+        # if self.url:
+        #    api.url = self.url
+        if self.max_retry_count:
+            api.max_retry_count = self.max_retry_count
+        if self.retry_timeout:
+            api.retry_timeout = self.retry_timeout
+        query_str = """[timeout:720];(
             /* Obtain route variants based on tags and bounding box */
             relation%s(%s)->.routes;
 
@@ -584,7 +603,14 @@ class OsmConnector(object):
             /* Return tags for elements and roles for relation members. */
             );out body;""" % (self.tags, self.bbox)
         logging.info(query_str)
-        return api.query(query_str)
+        try:
+            result = api.query(query_str)
+        except:
+            logging.info("exception occured, try with alternate url if set")
+            if self.url:
+                api.url = self.url
+            result = api.query(query_str)
+        return result
 
     def _query_stops(self):
         """Helper function to query OpenStreetMap stops
@@ -594,13 +620,27 @@ class OsmConnector(object):
         """
         # Query stops with platform role from selected relations
         api = overpy.Overpass()
-        query_str = """(
+        # if self.url:
+        #    api.url = self.url
+        if self.max_retry_count:
+            api.max_retry_count = self.max_retry_count
+        if self.retry_timeout:
+            api.retry_timeout = self.retry_timeout
+        query_str = """[timeout:720];(
             /* Obtain route variants based on tags and bounding box */
-            relation%s(%s);
+            relation%s(%s)->.routes;
 
             /*  Query for relation elements with role platform */
-            node(r:"platform")->.nodes;
-            way(r:"platform");
+            (
+            node(r.routes:"platform");
+            node(r.routes:"platform_entry_only");
+            node(r.routes:"platform_exit_only");
+            )->.nodes;
+            (
+            way(r.routes:"platform");
+            way(r.routes:"platform_entry_only");
+            way(r.routes:"platform_exit_only");
+            );
             node(w);
 
             /* Select all result sets  */
@@ -615,7 +655,14 @@ class OsmConnector(object):
             out body;
             );""" % (self.tags, self.bbox)
         logging.info(query_str)
-        return api.query(query_str)
+        try:
+            result = api.query(query_str)
+        except:
+            logging.info("exception occured, try with alternate url if set")
+            if self.url:
+                api.url = self.url
+            result = api.query(query_str)
+        return result
 
     def _generate_shape(self, route_variant, query_result_set):
         """Helper function to generate a valid GTFS shape from OSM query result
@@ -697,7 +744,7 @@ class OsmConnector(object):
 
         """
         if 'public_transport' in stop.tags:
-            if stop.tags['public_transport'] == 'platform':
+            if str(stop.tags['public_transport']).startswith("platform"):
                 return True
             elif stop.tags['public_transport'] == 'station':
                 return True
@@ -733,26 +780,55 @@ class OsmConnector(object):
 
         """
         api = overpy.Overpass()
+        # if self.url:
+        #    api.url = self.url
+        if self.max_retry_count:
+            api.max_retry_count = self.max_retry_count
+        if self.retry_timeout:
+            api.retry_timeout = self.retry_timeout
 
-        result = api.query("""
-        <osm-script>
-          <query type="way">
-            <around lat="%s" lon="%s" radius="50.0"/>
-            <has-kv k="name" />
-            <has-kv modv="not" k="highway" v="trunk"/>
-            <has-kv modv="not" k="highway" v="primary"/>
-            <has-kv modv="not" k="highway" v="secondary"/>
-            <has-kv modv="not" k="amenity" v="bus_station"/>
-          </query>
-          <print order="quadtile"/>
-          <query type="node">
-            <around lat="%s" lon="%s" radius="50.0"/>
-            <has-kv k="name"/>
-            <has-kv modv="not" k="highway" v="bus_stop"/>
-          </query>
-          <print order="quadtile"/>
-        </osm-script>
-        """ % (stop.lat, stop.lon, stop.lat, stop.lon))
+        try:
+            result = api.query("""
+                <osm-script>
+                  <query type="way">
+                    <around lat="%s" lon="%s" radius="50.0"/>
+                    <has-kv k="name" />
+                    <has-kv modv="not" k="highway" v="trunk"/>
+                    <has-kv modv="not" k="highway" v="primary"/>
+                    <has-kv modv="not" k="highway" v="secondary"/>
+                    <has-kv modv="not" k="amenity" v="bus_station"/>
+                  </query>
+                  <print order="quadtile"/>
+                  <query type="node">
+                    <around lat="%s" lon="%s" radius="50.0"/>
+                    <has-kv k="name"/>
+                    <has-kv modv="not" k="highway" v="bus_stop"/>
+                  </query>
+                  <print order="quadtile"/>
+                </osm-script>
+                """ % (stop.lat, stop.lon, stop.lat, stop.lon))
+        except:
+            if self.url:
+                api.url = self.url
+            result = api.query("""
+                <osm-script>
+                  <query type="way">
+                    <around lat="%s" lon="%s" radius="50.0"/>
+                    <has-kv k="name" />
+                    <has-kv modv="not" k="highway" v="trunk"/>
+                    <has-kv modv="not" k="highway" v="primary"/>
+                    <has-kv modv="not" k="highway" v="secondary"/>
+                    <has-kv modv="not" k="amenity" v="bus_station"/>
+                  </query>
+                  <print order="quadtile"/>
+                  <query type="node">
+                    <around lat="%s" lon="%s" radius="50.0"/>
+                    <has-kv k="name"/>
+                    <has-kv modv="not" k="highway" v="bus_stop"/>
+                  </query>
+                  <print order="quadtile"/>
+                </osm-script>
+                """ % (stop.lat, stop.lon, stop.lat, stop.lon))
 
         candidates = []
 

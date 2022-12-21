@@ -85,14 +85,17 @@ class TripsCreator(object):
 
         # Define a list with service days of given itinerary.
         services = []
+        trip_direction = None
         for trip in schedule['lines'][itinerary.route_id]:
             input_fr = trip["from"]
             input_to = trip["to"]
+            input_direction = trip["direction"] if "direction" in trip else None
             input_via = trip["via"] if "via" in trip else None
             if (input_fr == itinerary.fr and
                     input_to == itinerary.to and
                     input_via == itinerary.via):
                 trip_services = trip["services"]
+                trip_direction = input_direction
                 for service in trip_services:
                     if service not in services:
                         services.append(service)
@@ -117,7 +120,7 @@ class TripsCreator(object):
 
             # Prepare a trips builder container with useful data for later
             trips.append({'service_period': service_period,
-                          'stops': scheduled_stops, 'schedule': trips_schedule})
+                          'stops': scheduled_stops, 'schedule': trips_schedule, 'direction': trip_direction})
         return trips
 
     def _verify_data(self, schedule, line, itinerary):
@@ -190,7 +193,11 @@ class TripsCreator(object):
 
         # Loop through each timeslot for a trip
         for trip in trip_builder['schedule']:
-            gtfs_trip = route.AddTrip(feed, headsign=itinerary.to,
+            if itinerary.via:
+                headsign=itinerary.via + " -> " + itinerary.to
+            else:
+                headsign=itinerary.to
+            gtfs_trip = route.AddTrip(feed, headsign,
                                       service_period=trip_builder['service_period'])
             trips_count += 1
             search_idx = 0

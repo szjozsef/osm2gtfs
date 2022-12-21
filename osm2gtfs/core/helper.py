@@ -69,6 +69,7 @@ class Helper(object):
                 if not is_timepoint:
                     stop_time.arrival_secs = secs
                     stop_time.departure_secs = secs
+                    stop_time.timepoint="0"
                     trip.ReplaceStopTimeObject(stop_time)
         except ValueError as e:
             logging.error(e)

@@ -580,8 +580,8 @@ class OsmConnector(object):
         """
         # Query relations of route variants, their masters and geometry
         api = overpy.Overpass()
-        # if self.url:
-        #    api.url = self.url
+        if self.url:
+            api.url = self.url
         if self.max_retry_count:
             api.max_retry_count = self.max_retry_count
         if self.retry_timeout:
@@ -606,9 +606,9 @@ class OsmConnector(object):
         try:
             result = api.query(query_str)
         except:
-            logging.info("exception occured, try with alternate url if set")
+            logging.info("exception occured, (re-)try (with default url if set)")
             if self.url:
-                api.url = self.url
+                api.url = None
             result = api.query(query_str)
         return result
 
@@ -620,8 +620,8 @@ class OsmConnector(object):
         """
         # Query stops with platform role from selected relations
         api = overpy.Overpass()
-        # if self.url:
-        #    api.url = self.url
+        if self.url:
+            api.url = self.url
         if self.max_retry_count:
             api.max_retry_count = self.max_retry_count
         if self.retry_timeout:
@@ -658,9 +658,9 @@ class OsmConnector(object):
         try:
             result = api.query(query_str)
         except:
-            logging.info("exception occured, try with alternate url if set")
+            logging.info("exception occured, (re-)try (with default url if set)")
             if self.url:
-                api.url = self.url
+                api.url = None
             result = api.query(query_str)
         return result
 
@@ -780,8 +780,8 @@ class OsmConnector(object):
 
         """
         api = overpy.Overpass()
-        # if self.url:
-        #    api.url = self.url
+        if self.url:
+            api.url = self.url
         if self.max_retry_count:
             api.max_retry_count = self.max_retry_count
         if self.retry_timeout:
@@ -808,8 +808,9 @@ class OsmConnector(object):
                 </osm-script>
                 """ % (stop.lat, stop.lon, stop.lat, stop.lon))
         except:
+            logging.info("exception occured, (re-)try (with default url if set)")
             if self.url:
-                api.url = self.url
+                api.url = None
             result = api.query("""
                 <osm-script>
                   <query type="way">

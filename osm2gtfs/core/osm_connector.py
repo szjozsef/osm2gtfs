@@ -608,7 +608,7 @@ class OsmConnector(object):
         except:
             logging.info("exception occured, (re-)try (with default url if set)")
             if self.url:
-                api.url = None
+                api.url = "https://overpass-api.de/api/interpreter"
             result = api.query(query_str)
         return result
 
@@ -660,7 +660,7 @@ class OsmConnector(object):
         except:
             logging.info("exception occured, (re-)try (with default url if set)")
             if self.url:
-                api.url = None
+                api.url = "https://overpass-api.de/api/interpreter"
             result = api.query(query_str)
         return result
 
@@ -810,7 +810,7 @@ class OsmConnector(object):
         except:
             logging.info("exception occured, (re-)try (with default url if set)")
             if self.url:
-                api.url = None
+                api.url = "https://overpass-api.de/api/interpreter"
             result = api.query("""
                 <osm-script>
                   <query type="way">

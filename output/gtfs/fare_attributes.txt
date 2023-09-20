@@ -1,0 +1,6 @@
+fare_id,price,currency_type,payment_method,transfers,agency_id,transfer_duration
+metropolitan,4,RON,1,,RO-RATBV,3600
+periurban,2,RON,1,,RO-RATBV,3600
+metropolitan_driver,5,RON,0,,RO-RATBV,3600
+periurban_driver,2.5,RON,0,,RO-RATBV,3600
+school,0,RON,1,,RO-RATBV,

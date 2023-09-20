@@ -1,0 +1,6 @@
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+Mo-Fr,1,1,1,1,1,0,0,20230820,20241220
+Sa-Su,0,0,0,0,0,1,1,20230820,20241220
+Sa,0,0,0,0,0,1,0,20230820,20241220
+Su,0,0,0,0,0,0,1,20230820,20241220
+TE:Mo-Fr,1,1,1,1,1,0,0,20230820,20241220

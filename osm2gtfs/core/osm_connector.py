@@ -494,17 +494,18 @@ class OsmConnector(object):
         else:
             # Check tagging whether this is a stop area.
             if 'public_transport' not in stop_area.tags:
-                logging.warning(
-                    "Potential station has no public_transport tag.")
-                logging.warning(
-                    " Please fix on OSM: https://osm.org/%s/%s", osm_type, stop_area.id)
+                logging.warning("Potential station has no public_transport tag. Please fix on OSM: https://osm.org/%s/%s", osm_type, stop_area.id)
                 return None
             elif stop_area.tags['public_transport'] != 'stop_area':
-                logging.warning(
-                    "Warning: Potential station is not tagged as stop_area.")
-                logging.warning(
-                    " Please fix on OSM: https://osm.org/%s/%s", osm_type, stop_area.id)
+                logging.warning("Warning: Potential station is not tagged as stop_area. Please fix on OSM: https://osm.org/%s/%s", osm_type, stop_area.id)
                 return None
+
+        # Check name of stop area
+        if 'name' not in stop_area.tags:
+            logging.warning("Stop area without name. Please fix in OpenStreetMap: https://osm.org/relation/%s", stop_area.id)
+            stop_area.name = self.stop_no_name
+        else:
+            stop_area.name = stop_area.tags["name"]
 
         # Analzyse member objects (stops) of this stop area
         members = {}
@@ -525,7 +526,7 @@ class OsmConnector(object):
                     # of this Station
                     members[identifier] = self.stops['regular'][identifier]
                 else:
-                    logging.warning("Station member was not found in data, Statiom: https://osm.org/relation/%s, Platform: https://osm.org/node/%s", stop_area.id, member.ref)
+                    logging.warning("Station member was not found in data, Station(%s): https://osm.org/relation/%s, Platform: https://osm.org/node/%s", stop_area.name, stop_area.id, member.ref)
 
         if len(members) < 1:
             # Stop areas with only one stop, are not stations they just
@@ -537,12 +538,6 @@ class OsmConnector(object):
             logging.debug("OSM stop area has only one platform and can't be used as a GTFS station: https://osm.org/relation/%s", stop_area.id)
             return None
 
-        # Check name of stop area
-        if 'name' not in stop_area.tags:
-            logging.warning("Stop area without name. Please fix in OpenStreetMap: https://osm.org/relation/%s", stop_area.id)
-            stop_area.name = self.stop_no_name
-        else:
-            stop_area.name = stop_area.tags["name"]
 
         # Calculate coordinates for stop area based on the center of it's
         # members
@@ -561,7 +556,7 @@ class OsmConnector(object):
                           lon=stop_area.lon)
         station.set_members(members)
 
-        logging.info("\nStop area (OSM) has been used to create a station (GTFS): https://osm.org/relation/%s\n", str(stop_area.id))
+        logging.info("Stop area (OSM) has been used to create a station(%s) (GTFS): https://osm.org/relation/%s\n", stop_area.name, stop_area.id)
 
         return station
 

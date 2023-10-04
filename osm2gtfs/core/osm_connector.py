@@ -526,7 +526,7 @@ class OsmConnector(object):
                     # of this Station
                     members[identifier] = self.stops['regular'][identifier]
                 else:
-                    logging.warning("Station member was not found in data, Station(%s): https://osm.org/relation/%s, Platform: https://osm.org/node/%s", stop_area.name, stop_area.id, member.ref)
+                    logging.debug("Station member was not found in data, Station(%s): https://osm.org/relation/%s, Platform: https://osm.org/node/%s", stop_area.name, stop_area.id, member.ref)
 
         if len(members) < 1:
             # Stop areas with only one stop, are not stations they just
@@ -556,7 +556,7 @@ class OsmConnector(object):
                           lon=stop_area.lon)
         station.set_members(members)
 
-        logging.info("Stop area (OSM) has been used to create a station(%s) (GTFS): https://osm.org/relation/%s\n", stop_area.name, stop_area.id)
+        logging.info("OSM Stop area has been used to create a GTFS station(%s): https://osm.org/relation/%s", stop_area.name, stop_area.id)
 
         return station
 

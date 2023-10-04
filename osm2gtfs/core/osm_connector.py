@@ -525,27 +525,21 @@ class OsmConnector(object):
                     # of this Station
                     members[identifier] = self.stops['regular'][identifier]
                 else:
-                    logging.error("Station member was not found in data")
-                    logging.error(" https://osm.org/relation/%s", stop_area.id)
-                    logging.error(" https://osm.org/node/%s", member.ref)
+                    logging.warning("Station member was not found in data, Statiom: https://osm.org/relation/%s, Platform: https://osm.org/node/%s", stop_area.id, member.ref)
 
         if len(members) < 1:
             # Stop areas with only one stop, are not stations they just
             # group different elements of one stop together.
-            logging.error("Station with no members has been discarted:")
-            logging.error(" https://osm.org/relation/%s", stop_area.id)
+            logging.error("Station with no members has been discarted: https://osm.org/relation/%s", stop_area.id)
             return None
 
         elif len(members) == 1:
-            logging.warning(
-                "OSM stop area has only one platform and can't be used as a GTFS station:")
-            logging.warning(" https://osm.org/relation/%s", stop_area.id)
+            logging.debug("OSM stop area has only one platform and can't be used as a GTFS station: https://osm.org/relation/%s", stop_area.id)
             return None
 
         # Check name of stop area
         if 'name' not in stop_area.tags:
-            logging.warning("Stop area without name. Please fix in OpenStreetMap:")
-            logging.warning(" https://osm.org/relation/%s", stop_area.id)
+            logging.warning("Stop area without name. Please fix in OpenStreetMap: https://osm.org/relation/%s", stop_area.id)
             stop_area.name = self.stop_no_name
         else:
             stop_area.name = stop_area.tags["name"]
@@ -567,8 +561,7 @@ class OsmConnector(object):
                           lon=stop_area.lon)
         station.set_members(members)
 
-        logging.info("Stop area (OSM) has been used to create a station (GTFS):\n")
-        logging.info(" https://osm.org/relation/%s\n", str(stop_area.id))
+        logging.info("\nStop area (OSM) has been used to create a station (GTFS): https://osm.org/relation/%s\n", str(stop_area.id))
 
         return station
 

@@ -26,7 +26,7 @@ class AgencyCreator(object):
         Return a transitfeed.Agency object
         """
         fields = ['agency_name', 'agency_url', 'agency_timezone', 'agency_id',
-                  'agency_lang', 'agency_phone', 'agency_fare_url']
+                  'agency_lang', 'agency_phone', 'agency_email', 'agency_fare_url']
         data_dict = {}
         for field_name in fields:
             if field_name in self.config["agency"]:

@@ -7859,7 +7859,7 @@ A1,Sa-Su,A1_Sa-Su_GaraBrasov-AeroportulBrasov_13,"Aeroportul Brașov",,1,,relati
 TE1,TE:Mo-Fr,TE1_TE:Mo-Fr_Noua-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13330257,1,
 TE10,TE:Mo-Fr,TE10_TE:Mo-Fr_StadionulMunicipal-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13337978,1,
 TE11,TE:Mo-Fr,TE11_TE:Mo-Fr_Pelicanului-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13337976,1,
-TE12,TE:Mo-Fr,TE12_TE:Mo-Fr_CamineIAR-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13337974,1,
+TE12,TE:Mo-Fr,TE12_TE:Mo-Fr_BartolomeuNord-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13337974,1,
 TE13,TE:Mo-Fr,TE13_TE:Mo-Fr_Fundaturiicaplinie-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/15097891,1,
 TE2,TE:Mo-Fr,TE2_TE:Mo-Fr_GarajeSacele-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13330303,1,
 TE3,TE:Mo-Fr,TE3_TE:Mo-Fr_ValeaCetatii-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13337900,1,

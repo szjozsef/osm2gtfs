@@ -43,6 +43,7 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 410,RO-RATBV,410,"Brașov - Sânpetru(Subcetate)","Bus 410",701,https://osm.org/relation/13365597,4ea74b,FFFFFF,
 411,RO-RATBV,411,"Brașov - Sânpetru Residence","Bus 411",701,https://osm.org/relation/13365771,4ea74b,FFFFFF,
 412,RO-RATBV,412,"Brașov - Sânpetru(Morii)","Bus 412",701,https://osm.org/relation/13369084,23b14d,FFFFFF,
+41B,RO-RATBV,41B,"Lujerului - Livada Poștei","Bus 41B",3,https://osm.org/relation/14756843,56abc0,000000,
 420,RO-RATBV,420,"Brașov - Sânpetru - Bod","Bus 420",701,https://osm.org/relation/13369964,4ea74b,FFFFFF,
 5,RO-RATBV,5,"Roman - Stadionul Municipal","Bus 5",3,https://osm.org/relation/5397476,f82b3c,ffffff,
 50,RO-RATBV,50,"Camera de Comerț - Solomon","Minibus 50",3,https://osm.org/relation/5410164,e30e78,ffffff,

@@ -61,6 +61,7 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 620,RO-RATBV,620,"Brașov - Budila","Bus 620",701,https://osm.org/relation/13393985,4ea74b,FFFFFF,
 7,RO-RATBV,7,"Roman - Rulmentul","Trolleybus 7",11,https://osm.org/relation/5417866,fd7306,000000,
 710,RO-RATBV,710,"Barșov - Săcele","Bus 710",701,https://osm.org/relation/13545864,4ea74b,000000,
+711,RO-RATBV,711,"Barșov - Gârcini","Bus 711",701,https://osm.org/relation/16624360,4ea74b,000000,
 8,RO-RATBV,8,"Saturn - Rulmentul","Trolleybus 8",11,https://osm.org/relation/5417965,ecc1df,000000,
 810,RO-RATBV,810,"Brașov - Predeal","Bus 810",701,https://osm.org/relation/13396982,4ea74b,FFFFFF,
 9,RO-RATBV,9,"Rulmentul - Stadionul Municipal","Bus 9",3,https://osm.org/relation/5372433,efe44e,000000,

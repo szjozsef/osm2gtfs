@@ -30,7 +30,7 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 3,RO-RATBV,3,"Valea Cetății - Stadionul Tineretului","Trolleybus 3",11,https://osm.org/relation/5417776,a9aea8,000000,
 31,RO-RATBV,31,"Valea Cetății - Livada Poștei","Trolleybus 31",11,https://osm.org/relation/5390266,f66e32,000000,
 310,RO-RATBV,310,"Brașov - Hălchiu - Satu Nou","Bus 310",701,https://osm.org/relation/13364305,4ea74b,FFFFFF,
-32,RO-RATBV,32,"Valea Cetății - Coresi 2","Bus 32",3,https://osm.org/relation/5390272,113bab,FFFFFF,
+32,RO-RATBV,32,"Valea Cetății - 13 Decembrie","Bus 32",3,https://osm.org/relation/5390272,113bab,FFFFFF,
 320,RO-RATBV,320,"Brașov - Feldioara","Bus 320",701,https://osm.org/relation/13365000,4ea74b,FFFFFF,
 33,RO-RATBV,33,"Valea Cetății - Roman","Trolleybus 33",11,https://osm.org/relation/5418080,c4c4c4,000000,
 34,RO-RATBV,34,"Timiș-Triaj - Livada Poștei","Bus 34",3,https://osm.org/relation/5390290,9c9c9c,000000,

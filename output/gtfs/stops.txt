@@ -5,7 +5,7 @@ relation/13321605,,Noua,,45.62028205,25.63409685,Brasov,,1,,,,,
 relation/13318069,,"Livada Poștei",,45.6456747004,25.5884387999,Brasov,,1,,,,,
 relation/13321595,,Saturn,,45.6345251167,25.6356366499,Brasov,,1,,,,,
 relation/13319288,,Roman,,45.6329014001,25.6325423854,Brasov,,1,,,,,
-relation/13322445,,"Gara Brașov",,45.66077,25.6135137,Brasov,,1,,,,,
+relation/13322445,,"Gara Brașov",,45.6607703,25.6135138,Brasov,,1,,,,,
 relation/13317881,,Triaj,,45.6756622715,25.6476948283,Brasov,,1,,,,,
 relation/13321820,,Rulmentul,,45.6821082,25.6149943399,Brasov,,1,,,,,
 node/254344601,,Star,,45.6449812,25.5989181,Brasov,,0,,,1,,
@@ -406,7 +406,6 @@ node/8934219727,,"Liviu Rebreanu",,45.6794284,25.6068818,Brasov,,0,,,1,,
 node/8934219728,,"Liviu Rebreanu",,45.6793493,25.6065861,Brasov,,0,,,1,,
 node/8934219729,,"Nicolae Labiș",,45.6789266,25.6125424,Brasov,,0,,,1,,
 node/8934219730,,"Nicolae Labiș",,45.6789744,25.6133861,Brasov,,0,,,1,,
-node/8989952001,,"Cineplex Coresi",,45.6717481,25.6133862,Brasov,,0,,,1,,
 node/8989955187,,"Auchan Coresi",,45.6729823,25.6183389,Brasov,,0,,,1,,
 node/9164143090,,Izvorului,,45.6512534,25.7036907,Brasov,,0,,,1,,
 node/9164143091,,"Izvorului 1",,45.6542708,25.7038553,Brasov,,0,,,1,,
@@ -693,8 +692,8 @@ node/9274932346,,Saturn,,45.6344746,25.6355256,Brasov,,0,relation/13321595,,1,,2
 node/9274932347,,Saturn,,45.6345048,25.635596,Brasov,,0,relation/13321595,,1,,3
 node/9274932348,,Saturn,,45.6345323,25.6356562,Brasov,,0,relation/13321595,,1,,4
 node/9274932349,,Saturn,,45.6345698,25.6357249,Brasov,,0,relation/13321595,,1,,5
-node/9274968661,,"Gara Brașov",,45.6607642,25.6135147,Brasov,,0,relation/13322445,,1,,2
-node/9274968662,,"Gara Brașov",,45.660718,25.6135029,Brasov,,0,relation/13322445,,1,,3
+node/9274968661,,"Gara Brașov",,45.6607648,25.6135149,Brasov,,0,relation/13322445,,1,,2
+node/9274968662,,"Gara Brașov",,45.6607183,25.613503,Brasov,,0,relation/13322445,,1,,3
 node/9275045757,,Rulmentul,,45.6822398,25.6150512,Brasov,,0,relation/13321820,,1,,1
 node/9275045758,,Rulmentul,,45.6821763,25.6150259,Brasov,,0,relation/13321820,,1,,2
 node/9275045759,,Rulmentul,,45.6821091,25.6149984,Brasov,,0,relation/13321820,,1,,3

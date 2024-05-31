@@ -51,6 +51,7 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 53,RO-RATBV,53,"Turnului - Panselelor","Bus 53",3,https://osm.org/relation/13319275,f82b3c,ffffff,
 54,RO-RATBV,54,"Triaj - Hidro A","Bus 54",3,https://osm.org/relation/13317380,98999b,000000,
 540,RO-RATBV,540,"Brașov - Vama Buzăului","Bus 540",701,https://osm.org/relation/13390889,4ea74b,FFFFFF,
+55,RO-RATBV,55,"Cetățuie - Livada Poștei","Bus 55",3,https://osm.org/relation/17657106,ffffff,000000,
 5M,RO-RATBV,5M,"Stadionul Municipal - Măgurele","Bus 5M",3,https://osm.org/relation/5372253,e77721,000000,
 6,RO-RATBV,6,"Saturn - Livada Poștei","Trolleybus 6",11,https://osm.org/relation/5388443,00b298,000000,
 610,RO-RATBV,610,"Brașov - Zizin - Purcăreni","Bus 610",701,https://osm.org/relation/13393577,4ea74b,FFFFFF,

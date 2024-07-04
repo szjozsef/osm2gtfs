@@ -14,6 +14,7 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 18,RO-RATBV,18,"Bariera Bartolomeu - Fundăturii / I.A.R.","Bus 18",3,https://osm.org/relation/5386186,e58799,000000,
 2,RO-RATBV,2,"Rulmentul - Livada Poștei","Trolleybus 2",11,https://osm.org/relation/5369953,00b64f,000000,
 20,RO-RATBV,20,"Livada Poștei - Poiana Brașov","Bus 20",3,https://osm.org/relation/5387308,96d700,000000,
+20B,RO-RATBV,20B,"Open top Bus","Bus 20B",3,https://osm.org/relation/14428426,ceef6c,000000,
 21,RO-RATBV,21,"Triaj - Noua","Bus 21",3,https://osm.org/relation/5386248,fc4c01,000000,
 210,RO-RATBV,210,"Brașov - Ghimbav","Bus 210",701,https://osm.org/relation/13354417,4ea74b,FFFFFF,
 22,RO-RATBV,22,"Saturn - Stadionul Tineretului","Bus 22",3,https://osm.org/relation/5387345,bb29ba,ffffff,

@@ -5,7 +5,7 @@ relation/13321605,,Noua,,45.62028205,25.63409685,Brasov,,1,,,,,
 relation/13318069,,"Livada Poștei",,45.6456592861,25.588432557,Brasov,,1,,,,,
 relation/13321595,,Saturn,,45.6345251167,25.6356366499,Brasov,,1,,,,,
 relation/13319288,,Roman,,45.6329014001,25.6325423854,Brasov,,1,,,,,
-relation/13322445,,"Terminal Gară",,45.6607542401,25.61244639,Brasov,,1,,,,,
+relation/13322445,,"Terminal Gară",,45.6607749101,25.61245296,Brasov,,1,,,,,
 relation/13317881,,Triaj,,45.6756622715,25.6476948283,Brasov,,1,,,,,
 relation/13321820,,Rulmentul,,45.6821082,25.6149943399,Brasov,,1,,,,,
 node/254344601,,Star,,45.6449812,25.5989181,Brasov,,0,,,1,,
@@ -116,7 +116,7 @@ node/3343778549,,Plevnei,,45.6594159,25.5954628,Brasov,,0,,,1,,
 node/3343778550,,Plevnei,,45.6603357,25.5963445,Brasov,,0,,,1,,
 node/3343778551,,Plevnei,,45.6608638,25.5946464,Brasov,,0,,,1,,
 node/3343778552,,Universitate,,45.6558762,25.6000287,Brasov,,0,,,1,,
-node/3343778553,,Universitate,,45.6567355,25.5991831,Brasov,,0,,,1,,
+node/3343778553,,Universitate,,45.6567319,25.5991921,Brasov,,0,,,1,,
 node/3343781090,,Onix,,45.6534164,25.6040477,Brasov,,0,,,1,,
 node/3347300843,,"Tudor Vladimirescu",,45.6649011,25.5940212,Brasov,,0,,,1,,
 node/3368804794,,Făget,,45.6610007,25.6078061,Brasov,,0,,,1,,
@@ -744,7 +744,7 @@ node/9969267235,,Noua,,45.6202777,25.6341293,Brasov,,0,relation/13321605,,1,,2
 node/10011185841,,"Facultativă II",,45.623196,25.5630564,Brasov,,0,,,1,,
 node/10064979821,,"Ferma 11",,45.7663575,25.586659,Brasov,,0,,,1,,
 node/10064979823,,"Ferma 11",,45.7668055,25.58697,Brasov,,0,,,1,,
-node/10198827064,,"Terminal Gară",,45.6608741,25.6123147,Brasov,,0,relation/13322445,,1,,2
+node/10198827064,,"Terminal Gară",,45.6609032,25.6123215,Brasov,,0,relation/13322445,,1,,2
 node/10258912709,,Brândușelor,,45.7657313,25.5292854,Halchiu,,0,,,1,,
 node/10258912712,,Brândușelor,,45.7657096,25.5287754,Halchiu,,0,,,1,,
 node/10300081325,,"Ferma Asfalt",,45.7311794,25.5773754,Halchiu,,0,,,1,,
@@ -774,15 +774,15 @@ node/11680951479,,"Strada Mare",,45.5773027,25.3814219,Zarnesti,,0,,,1,,
 node/11680951482,,"Strada Mare",,45.5774352,25.3814857,Zarnesti,,0,,,1,,
 node/11681500789,,"Ioan Socec",,45.6700281,25.5995249,Brasov,,0,,,1,,
 node/11681500791,,Bronzului,,45.6670673,25.5990654,Brasov,,0,,,1,,
-node/11801788119,,"Terminal Gară",,45.6608261,25.612308,Brasov,,0,relation/13322445,,1,,4
-node/11801788120,,"Terminal Gară",,45.6608359,25.6126209,Brasov,,0,relation/13322445,,1,,1
-node/11801788121,,"Terminal Gară",,45.6607727,25.6122944,Brasov,,0,relation/13322445,,1,,6
-node/11801788122,,"Terminal Gară",,45.6607839,25.6126093,Brasov,,0,relation/13322445,,1,,3
-node/11801788123,,"Terminal Gară",,45.6607279,25.6122869,Brasov,,0,relation/13322445,,1,,8
-node/11801788124,,"Terminal Gară",,45.6607348,25.6125952,Brasov,,0,relation/13322445,,1,,5
-node/11801788125,,"Terminal Gară",,45.6606749,25.6122751,Brasov,,0,relation/13322445,,1,,10
-node/11801788126,,"Terminal Gară",,45.6606836,25.6125858,Brasov,,0,relation/13322445,,1,,7
-node/11801788127,,"Terminal Gară",,45.6606285,25.6125736,Brasov,,0,relation/13322445,,1,,9
+node/11801788119,,"Terminal Gară",,45.660844,25.6123122,Brasov,,0,relation/13322445,,1,,4
+node/11801788120,,"Terminal Gară",,45.6608661,25.6126438,Brasov,,0,relation/13322445,,1,,1
+node/11801788121,,"Terminal Gară",,45.6608012,25.6122983,Brasov,,0,relation/13322445,,1,,6
+node/11801788122,,"Terminal Gară",,45.6608015,25.6126176,Brasov,,0,relation/13322445,,1,,3
+node/11801788123,,"Terminal Gară",,45.6607487,25.6122905,Brasov,,0,relation/13322445,,1,,8
+node/11801788124,,"Terminal Gară",,45.6607521,25.6125997,Brasov,,0,relation/13322445,,1,,5
+node/11801788125,,"Terminal Gară",,45.6606914,25.6122784,Brasov,,0,relation/13322445,,1,,10
+node/11801788126,,"Terminal Gară",,45.6607017,25.6125904,Brasov,,0,relation/13322445,,1,,7
+node/11801788127,,"Terminal Gară",,45.6606392,25.6125772,Brasov,,0,relation/13322445,,1,,9
 node/11817868371,,Hărmanului,,45.6648974,25.7071165,Brasov,,0,,,1,,
 node/11821207041,,"Pepco Zărnești",,45.5625734,25.3288044,Zarnesti,,0,,,1,,
 node/11821207043,,"Penny Zărnești",,45.5629265,25.329601,Zarnesti,,0,,,1,,

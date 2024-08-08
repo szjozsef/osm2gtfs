@@ -4,7 +4,6 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 110,RO-RATBV,110,"Barșov - Cristian","Bus 110",701,https://osm.org/relation/13342505,4ea74b,FFFFFF,
 120,RO-RATBV,120,"Brașov - Cristian - Vulcan","Bus 120",701,https://osm.org/relation/16033484,4ea74b,FFFFFF,
 130,RO-RATBV,130,"Brașov - Cristian - Râșnov","Bus 130",701,https://osm.org/relation/13343060,4ea74b,FFFFFF,
-130R,RO-RATBV,130R,"Brașov - Cristian - Râșnov","Bus 130R",3,https://osm.org/relation/17885722,4ea74b,FFFFFF,
 131,RO-RATBV,131,"Brașov - Romacril Râșnov","Bus 131",701,https://osm.org/relation/13343063,4ea74b,ffffff,
 14,RO-RATBV,14,"Fabrica de Var - Livada Poștei","Bus 14",3,https://osm.org/relation/5399075,6dc24b,000000,
 140,RO-RATBV,140,"Brașov - Zărnești","Bus 140",701,https://osm.org/relation/16062796,4ea74b,ffffff,

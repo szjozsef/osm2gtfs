@@ -522,7 +522,7 @@ node/9197991344,,"Aleea Păcii",,45.6911501,25.6203725,Sanpetru,,0,,,1,,
 node/9197991345,,"Aleea Păcii",,45.6935479,25.6177215,Sanpetru,,0,,,1,,
 node/9198172118,,"Subcetate 2",,45.6964197,25.6149479,Sanpetru,,0,,,1,,
 node/9198172120,,"Subcetate 2",,45.6965098,25.6147071,Sanpetru,,0,,,1,,
-node/9198172121,,Subcetate,,45.7004602,25.6106624,Sanpetru,,0,,,1,,"Subcetate City"
+node/9198172121,,Subcetate,,45.7004602,25.6106624,Sanpetru,,0,,,1,,
 node/9198279353,,"Sfântul Andrei",,45.6940529,25.6236098,Sanpetru,,0,,,1,,
 node/9198279354,,"Sfântul Andrei",,45.6933162,25.6229213,Sanpetru,,0,,,1,,
 node/9198279357,,Triajului,,45.6975234,25.6260366,Sanpetru,,0,,,1,,

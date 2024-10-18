@@ -1,0 +1,45 @@
+{
+    "query": {
+        "bbox": {
+            "n": "46.2",
+            "s": "45.4",
+            "e": "26.1",
+            "w": "24.6"
+        },
+        "tags": {
+          "route": ["bus", "trolleybus"],
+          "network": "RAT Brașov",
+          "public_transport:version": "2"
+        },
+        "url": "https://overpass-api.de/api/interpreter",
+        "max_retry_count": 5,
+        "retry_timeout": 30.0
+    },
+    "stops": {
+      "name_without": "N/A",
+      "name_auto": "yes"
+    },
+    "agency": {
+      "agency_id": "RO-RATBV",
+      "agency_name": "RATBV S.A.",
+      "agency_url": "https://www.ratbv.ro/",
+      "agency_timezone": "Europe/Bucharest",
+      "agency_lang": "RO",
+      "agency_phone": "+40 368 800600",
+      "agency_email": "comunicare@ratbv.ro",
+      "agency_fare_url": "https://www.ratbv.ro/tarife-trasee-urbane-si-metropolitane/"
+    },
+    "feed_info": {
+        "publisher_name": "unofficial",
+        "publisher_url": "https://github.com/szjozsef/osm2gtfs/output/gtfs",
+        "version": "1729185439",
+        "start_date": "20240917",
+        "end_date": "20260117",
+        "contact_email": "",
+        "contact_url": "https://github.com/szjozsef/osm2gtfs"
+    },
+    "schedule_source": "ro_ratbv_schedule.json",
+    "fares": "ro_ratbv_fares.json",
+    "output_file": "ro-ratbv.zip",
+    "selector": "ro_ratbv"
+}

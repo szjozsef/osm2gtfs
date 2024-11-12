@@ -34,10 +34,8 @@ class TripsCreatorRoRatbv(TripsCreator):
             trip_id_sign = itinerary.fr + " - " + headsign
             service_period = trip_builder['service_period']
             id_string = line.route_id + '_' + service_period.service_id + '_' + trip_id_sign + '_' + str(trips_count + 1)
-            #id_string = id_string.replace('Ș','S').replace('ș','s').replace('Ț','T').replace('ț','t').replace('Ă','A').replace('ă','a').replace('Î','I').replace('î','i').replace('Â','A').replace('â','a')
             id_string = unicodedata.normalize('NFD', id_string)
             id_string = id_string.encode("ascii", "ignore").decode()
-            #.replace(' ', '')
             id_string = re.sub('[ ]+', '', id_string)
             id_string = re.sub('[^0-9a-zA-Z_:-]', '', id_string)
             gtfs_trip = route.AddTrip(feed, headsign, service_period, id_string)

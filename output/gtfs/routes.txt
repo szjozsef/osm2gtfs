@@ -73,6 +73,7 @@ TE12,RO-RATBV,TE12,"Bartolomeu Nord - Șirul Beethoven","Transport Elevi 12",3,h
 TE13,RO-RATBV,TE13,"Stupini - Șirul Beethoven","Transport Elevi 13",3,https://osm.org/relation/15097892,00a3e8,FFFFFF,
 TE14,RO-RATBV,TE14,"Săcele - Livada Poștei","Transport Elevi 14",3,https://osm.org/relation/18025093,00a3e8,FFFFFF,
 TE15,RO-RATBV,TE15,"Bartolomeu Nord(Avantgarden) - Stupini Centru","Transport Elevi 15",3,https://osm.org/relation/18026926,00a3e8,FFFFFF,
+TE16,RO-RATBV,TE16,"Livada Poștei - Școlii","Transport Elevi 16",3,https://osm.org/relation/18280975,00a3e8,FFFFFF,
 TE2,RO-RATBV,TE2,"Săcele - Șirul Beethoven","Transport Elevi 2",3,https://osm.org/relation/13330304,00a3e8,FFFFFF,
 TE3,RO-RATBV,TE3,"Valea Cetății - Șirul Beethoven","Transport Elevi 3",3,https://osm.org/relation/13337901,00a3e8,FFFFFF,
 TE4,RO-RATBV,TE4,"Noua - Șirul Beethoven","Transport Elevi 4",3,https://osm.org/relation/13337899,00a3e8,FFFFFF,

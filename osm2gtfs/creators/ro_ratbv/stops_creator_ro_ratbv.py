@@ -37,10 +37,10 @@ class StopsCreatorRoRatbv(StopsCreator):
         else:
             zone_id = "Brasov"
 
-        if "local_ref" in stop.tags:
-            stop_code = stop.tags['local_ref']
-        elif "gtfs_stop_code" in stop.tags:
+        if "gtfs_stop_code" in stop.tags:
             stop_code = stop.tags['gtfs_stop_code']
+        elif "local_ref" in stop.tags:
+            stop_code = stop.tags['local_ref']
         else:
             stop_code = None
         if "wheelchair" in stop.tags:

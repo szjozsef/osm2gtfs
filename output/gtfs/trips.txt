@@ -321,11 +321,13 @@ route_id,service_id,trip_id,trip_headsign,trip_short_name,direction_id,block_id,
 100,Mo-Fr,100_Mo-Fr_TerminalGara-Telecabina_3,Telecabina,,1,,relation/13688026,1,2
 100,Mo-Fr,100_Mo-Fr_TerminalGara-Telecabina_4,Telecabina,,1,,relation/13688026,1,2
 100,Mo-Fr,100_Mo-Fr_TerminalGara-Telecabina_5,Telecabina,,1,,relation/13688026,1,2
+100,Mo-Fr,100_Mo-Fr_TerminalGara-Telecabina_6,Telecabina,,1,,relation/13688026,1,2
 100,Sa-Su,100_Sa-Su_TerminalGara-Telecabina_1,Telecabina,,1,,relation/13688026,1,2
 100,Sa-Su,100_Sa-Su_TerminalGara-Telecabina_2,Telecabina,,1,,relation/13688026,1,2
 100,Sa-Su,100_Sa-Su_TerminalGara-Telecabina_3,Telecabina,,1,,relation/13688026,1,2
 100,Sa-Su,100_Sa-Su_TerminalGara-Telecabina_4,Telecabina,,1,,relation/13688026,1,2
 100,Sa-Su,100_Sa-Su_TerminalGara-Telecabina_5,Telecabina,,1,,relation/13688026,1,2
+100,Sa-Su,100_Sa-Su_TerminalGara-Telecabina_6,Telecabina,,1,,relation/13688026,1,2
 100,Mo-Fr,100_Mo-Fr_Telecabina-TerminalGara_1,"Terminal Gară",,0,,relation/13688025,1,2
 100,Mo-Fr,100_Mo-Fr_Telecabina-TerminalGara_2,"Terminal Gară",,0,,relation/13688025,1,2
 100,Mo-Fr,100_Mo-Fr_Telecabina-TerminalGara_3,"Terminal Gară",,0,,relation/13688025,1,2
@@ -8255,4 +8257,3 @@ TE7,TE:Mo-Fr,TE7_TE:Mo-Fr_Rulmentul-SirulBeethoven_1,"Șirul Beethoven",,0,,rela
 TE7S,TE:Mo-Fr,TE7S_TE:Mo-Fr_Rulmentul-MoriiSanpetru-Rulmentul_1,"Morii Sânpetru - Rulmentul",,0,,relation/18144237,1,
 TE8,TE:Mo-Fr,TE8_TE:Mo-Fr_Rulmentul-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13337908,1,
 TE9,TE:Mo-Fr,TE9_TE:Mo-Fr_Rulmentul-SirulBeethoven_1,"Șirul Beethoven",,0,,relation/13337910,1,
-XMAS,20241206:20241229,XMAS_20241206:20241229_Roman-Roman_1,Roman,,0,,relation/14980788,1,

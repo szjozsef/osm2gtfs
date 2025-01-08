@@ -1,2 +1,2 @@
 feed_publisher_name,feed_publisher_url,feed_lang,default_lang,feed_start_date,feed_end_date,feed_version,feed_contact_email,feed_contact_url
-unofficial,https://github.com/szjozsef/osm2gtfs/output/gtfs,RO,,20241118,20260318,1734514404,,https://github.com/szjozsef/osm2gtfs
+unofficial,https://github.com/szjozsef/osm2gtfs/output/gtfs,RO,,20241208,20260408,1736287829,,https://github.com/szjozsef/osm2gtfs

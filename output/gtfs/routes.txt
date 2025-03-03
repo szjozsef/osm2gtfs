@@ -61,7 +61,6 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 610,RO-RATBV,610,"Brașov - Zizin - Purcăreni","Bus 610",3,https://osm.org/relation/13393577,4ea74b,FFFFFF,
 611,RO-RATBV,611,"Brașov - Cărpiniș - Tărlungeni","Bus 611",3,https://osm.org/relation/13393759,4ea74b,FFFFFF,
 612,RO-RATBV,612,"Brașov - Cărpiniș - Tărlungeni - Zizin - Purcăreni","Bus 612",3,https://osm.org/relation/13393858,4ea74b,FFFFFF,
-620,RO-RATBV,620,"Brașov - Budila","Bus 620",3,https://osm.org/relation/13393985,4ea74b,FFFFFF,
 7,RO-RATBV,7,"Roman - Rulmentul","Trolleybus 7",11,https://osm.org/relation/5417866,ff6900,000000,
 710,RO-RATBV,710,"Barșov - Săcele","Bus 710",3,https://osm.org/relation/13545864,4ea74b,FFFFFF,
 711,RO-RATBV,711,"Barșov - Gârcini","Bus 711",3,https://osm.org/relation/16624360,4ea74b,FFFFFF,

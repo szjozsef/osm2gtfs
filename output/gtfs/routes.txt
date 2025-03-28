@@ -1,7 +1,6 @@
 route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color,route_sort_order
 1,RO-RATBV,1,"Triaj - Livada Poștei","Trolleybus 1",11,https://osm.org/relation/5369867,ffe900,000000,
 10,RO-RATBV,10,"Valea Cetății - Triaj","Trolleybus 10",11,https://osm.org/relation/5417976,9e292f,FFFFFF,
-100,RO-RATBV,100,"Terminal Gară - Telecabina Poiana Bv.","Bus 100",3,https://osm.org/relation/13688027,0085ca,ffffff,
 110,RO-RATBV,110,"Barșov - Cristian","Bus 110",3,https://osm.org/relation/13342505,4ea74b,FFFFFF,
 120,RO-RATBV,120,"Brașov - Cristian - Vulcan","Bus 120",3,https://osm.org/relation/16033484,4ea74b,FFFFFF,
 130,RO-RATBV,130,"Brașov - Cristian - Râșnov","Bus 130",3,https://osm.org/relation/13343060,4ea74b,FFFFFF,
@@ -57,7 +56,6 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 56,RO-RATBV,56,"Cimitir Micșunica - Roman","Bus 56",3,https://osm.org/relation/17683701,ffffff,000000,
 5M,RO-RATBV,5M,"Stadionul Municipal - Măgurele","Bus 5M",3,https://osm.org/relation/5372253,e77721,000000,
 6,RO-RATBV,6,"Saturn - Livada Poștei","Trolleybus 6",11,https://osm.org/relation/5388443,00b298,000000,
-60,RO-RATBV,60,"Poiana Mică - Telecabina","Bus 60",3,https://osm.org/relation/13326486,6b99ba,000000,
 610,RO-RATBV,610,"Brașov - Zizin - Purcăreni","Bus 610",3,https://osm.org/relation/13393577,4ea74b,FFFFFF,
 611,RO-RATBV,611,"Brașov - Cărpiniș - Tărlungeni","Bus 611",3,https://osm.org/relation/13393759,4ea74b,FFFFFF,
 612,RO-RATBV,612,"Brașov - Cărpiniș - Tărlungeni - Zizin - Purcăreni","Bus 612",3,https://osm.org/relation/13393858,4ea74b,FFFFFF,

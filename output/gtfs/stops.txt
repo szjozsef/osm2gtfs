@@ -748,7 +748,7 @@ node/10964817435,,"Aeroportul Brașov",,45.6940446,25.5174547,Brasov,,0,,,1,,
 node/10970282281,,"Stadionul Municipal",,45.6594299,25.5694289,Brasov,,0,relation/13321836,,1,,9
 node/11014591991,,Fundăturii,,45.685313,25.541451,Brasov,,0,,,1,,
 node/11016370557,,"Nicolae Titulescu",,45.6295804,25.465864,Cristian,,0,,,1,,
-node/11016370560,,"Primăria Vulcan",,45.6339467,25.4214502,Cristian,,0,,,1,,
+node/11016370560,,"Primăria Vulcan",,45.6339467,25.4214502,Vulcan,,0,,,1,,
 node/11030867200,,Romacril,,45.587568,25.4373758,Rasnov,,0,,,1,,
 node/11030879648,,"Complex Comercial",,45.5748484,25.3625071,Zarnesti,,0,,,1,,
 node/11030879653,,"CEC Zărnești",,45.559094,25.3137071,Zarnesti,,0,,,1,,

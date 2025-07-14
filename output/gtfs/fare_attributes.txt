@@ -1,8 +1,8 @@
 fare_id,price,currency_type,payment_method,transfers,agency_id,transfer_duration
-urban,5,RON,1,,RO-RATBV,3600
-zone_1,5,RON,1,,RO-RATBV,3600
-zone_2,7,RON,1,,RO-RATBV,3600
-zone_3,8,RON,1,,RO-RATBV,3600
+urban,5,RON,1,,RO-RATBV,5400
+zone_1,5,RON,1,,RO-RATBV,5400
+zone_2,7,RON,1,,RO-RATBV,5400
+zone_3,8,RON,1,,RO-RATBV,5400
 periurban,3,RON,1,,RO-RATBV,1800
 metropolitan,12,RON,1,,RO-RATBV,5400
 school,0,RON,1,,RO-RATBV,

@@ -42,6 +42,7 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 410,RO-RATBV,410,"Brașov - Sânpetru(Subcetate)","Bus 410",3,https://osm.org/relation/13365597,4ea74b,FFFFFF,
 411,RO-RATBV,411,"Brașov - Sânpetru Residence","Bus 411",3,https://osm.org/relation/13365771,4ea74b,FFFFFF,
 412,RO-RATBV,412,"Brașov - Sânpetru(Spital)","Bus 412",3,https://osm.org/relation/13369084,23b14d,FFFFFF,
+41B,RO-RATBV,41B,"Lujerului - Livada Poștei","Bus 41B",3,https://osm.org/relation/14756843,7bafd4,000000,
 42,RO-RATBV,42,"Terminal Gară - Zona Industrială Griviței","Bus 42",3,https://osm.org/relation/18658570,b095a6,000000,
 420,RO-RATBV,420,"Brașov - Sânpetru - Bod","Bus 420",3,https://osm.org/relation/13369964,4ea74b,FFFFFF,
 5,RO-RATBV,5,"Roman - Stadionul Municipal","Bus 5",3,https://osm.org/relation/5397476,ec2738,ffffff,

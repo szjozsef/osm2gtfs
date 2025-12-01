@@ -81,3 +81,4 @@ TE7,RO-RATBV,TE7,"Rulmentul - Șirul Beethoven","Transport Elevi 7",3,https://os
 TE7S,RO-RATBV,TE7S,"Rulmentul - Sânpetru","Transport Elevi 7S",3,https://osm.org/relation/18144238,00a3e8,FFFFFF,
 TE8,RO-RATBV,TE8,"Rulmentul - Șirul Beethoven","Transport Elevi 8",3,https://osm.org/relation/13337909,00a3e8,FFFFFF,
 TE9,RO-RATBV,TE9,"Rulmentul - Șirul Beethoven","Transport Elevi 9",3,https://osm.org/relation/13337911,00a3e8,FFFFFF,
+XMAS,RO-RATBV,XMAS,"Autobuzul lui Moș Crăciun","XMAS - Autobuzul lui Moș Crăciun",3,https://osm.org/relation/14982562,f82b3c,ffffff,

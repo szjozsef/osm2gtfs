@@ -426,7 +426,7 @@ node/9164528582,,Filiași,,45.6753169,25.6485919,Brasov,,0,,,1,,
 node/9164803420,,Panselelor,,45.6274871,25.6225393,Brasov,,0,,,1,,
 node/9164803421,,"Parc Industrial Metrom",,45.6307278,25.6244269,Brasov,,0,,,1,,
 node/9164803422,,"Parc Industrial Metrom",,45.630856,25.6248726,Brasov,,0,,,1,,
-node/9167564057,,"Facultate Construcții",,45.663869,25.617902,Brasov,,0,,,1,,
+node/9167564057,,"Facultate Construcții",,45.6638581,25.6178451,Brasov,,0,,,1,,
 node/9167564059,,"Universitate Spiru Haret",,45.6644578,25.6140261,Brasov,,0,,,1,,
 node/9167564061,,"Patinoarul Olimpic",,45.6642626,25.6147493,Brasov,,0,,,1,,
 node/9167564063,,Turnului,,45.6649448,25.6096242,Brasov,,0,,,1,,
@@ -436,6 +436,9 @@ node/9170142236,,Pelicanului,,45.665914,25.5602611,Brasov,,0,,,1,,
 node/9171277177,,"IAR Ghimbav",,45.6938583,25.5299278,Brasov,,0,,,1,,
 node/9171304342,,"Piața Agroalimentară",,45.6900413,25.5833949,Brasov,,0,,,1,,
 node/9171391885,,"Facultativă Fundăturii",,45.678718,25.5445749,Brasov,,0,,,1,,
+node/9171470075,,"Silver Mountain",,45.6044896,25.5430183,PoianaBrasov,,0,,,1,,
+node/9171470093,,"Poiana Brașov",,45.5949652,25.5536659,PoianaBrasov,,0,,,1,,
+node/9171470095,,Telecabina,,45.5878486,25.5512915,PoianaBrasov,,0,,,1,,
 node/9171965584,,Argintului,,45.6701631,25.5962497,Brasov,,0,,,1,,
 node/9171965586,,"Ioan Socec",,45.6707036,25.5993865,Brasov,,0,,,1,,
 node/9171965589,,Argintului,,45.6707706,25.596177,Brasov,,0,,,1,,
@@ -682,7 +685,6 @@ node/9274823442,,Roman,,45.6329062,25.6325543,Brasov,,0,relation/13319288,,1,,4
 node/9274823443,,Roman,,45.6329471,25.6326427,Brasov,,0,relation/13319288,,1,,5
 node/9274823444,,Roman,,45.632988,25.6327206,Brasov,,0,relation/13319288,,1,,6
 node/9274917899,,Triaj,,45.6755206,25.6474401,Brasov,,0,relation/13317881,,1,,1
-node/9274917900,,Triaj,,45.6755675,25.6475295,Brasov,,0,relation/13317881,,1,,2
 node/9274917901,,Triaj,,45.6756116,25.6476167,Brasov,,0,relation/13317881,,1,,3
 node/9274917902,,Triaj,,45.6756595,25.6477026,Brasov,,0,relation/13317881,,1,,4
 node/9274917903,,Triaj,,45.6757124,25.6477835,Brasov,,0,relation/13317881,,1,,5
@@ -728,6 +730,7 @@ node/9433605249,,"Primăria Teliu",,45.6982175,25.8577428,Teliu,,0,,,1,,
 node/9433605250,,"Primăria Teliu",,45.6984415,25.8574793,Teliu,,0,,,1,,
 node/9433605252,,"Școala Teliu",,45.6894847,25.8879454,Teliu,,0,,,1,,
 node/9433605254,,"Școala Teliu",,45.688944,25.8888275,Teliu,,0,,,1,,
+node/9473586964,,"Poiana Mică",,45.6081297,25.5530015,PoianaBrasov,,0,,,1,,
 node/9565453078,,"Stadionul Municipal",,45.6596089,25.5703094,Brasov,,0,relation/13321836,,1,,8
 node/9710744128,,"Facultativă Fundăturii",,45.6787749,25.5448113,Brasov,,0,,,1,,
 node/9710744131,,"Fundăturii cap linie",,45.683067,25.5431803,Brasov,,0,,,1,,
@@ -749,6 +752,7 @@ node/10258912709,,"Brândușelor Hălchiu",,45.7657313,25.5292854,Halchiu,,0,,,1
 node/10258912712,,"Brândușelor Hălchiu",,45.7657096,25.5287754,Halchiu,,0,,,1,,
 node/10300081325,,"Ferma Asfalt",,45.7311794,25.5773754,Halchiu,,0,,,1,,
 node/10300081327,,"Ferma Asfalt",,45.7292016,25.5773715,Halchiu,,0,,,1,,
+node/10586930357,,"Poiana Brașov",,45.5948724,25.5532429,PoianaBrasov,,0,relation/13456848,,1,,2
 node/10610528741,,"Garaje Săcele",,45.6092666,25.7309079,Sacele,,0,,,1,,
 node/10774754860,,"Tudor Arghezi",,45.6657272,25.620462,Brasov,,0,,,1,,
 node/10775488000,,"Camil Petrescu",,45.667923,25.6120119,Brasov,,0,,,1,,

@@ -1,0 +1,21 @@
+area_id,area_name
+Brasov,Brasov
+PoianaBrasov,"Poiana Brasov"
+Cristian,Cristian
+Vulcan,Vulcan
+Rasnov,Rasnov
+Zarnesti,Zarnesti
+Ghimbav,Ghimbav
+Codlea,Codlea
+Halchiu,Halchiu
+Feldioara,Feldioara
+Sanpetru,Sanpetru
+Bod,Bod
+Harman,Harman
+PoduOltului,"Podu Oltului"
+Prejmer,Prejmer
+VamaBuzaului,"Vama Buzaului"
+Teliu,Teliu
+Tarlungeni,Tarlungeni
+Sacele,Sacele
+Predeal,Predeal

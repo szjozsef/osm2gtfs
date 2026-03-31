@@ -1,0 +1,9 @@
+fare_product_id,fare_product_name,amount,currency
+urban_product,Urban,5.00,RON
+zone_1_product,"Zone 1",5.00,RON
+zone_2_product,"Zone 2",7.00,RON
+zone_3_product,"Zone 3",8.00,RON
+periurban_product,Periurban,3.00,RON
+metropolitan_product,Metropolitan,12.00,RON
+green_fridays,"Green Friday",0.00,RON
+school_product,School,0.00,RON

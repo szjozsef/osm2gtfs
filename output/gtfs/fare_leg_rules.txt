@@ -36,12 +36,15 @@ periurban,,Zarnesti,Rasnov,periurban_product,,0
 periurban,,Zarnesti,Zarnesti,periurban_product,,0
 periurban_fri,,Bod,Bod,green_fridays,friday_all_day,1
 periurban_fri,,Bod,Sanpetru,green_fridays,friday_all_day,1
+periurban_fri,,Codlea,Codlea,green_fridays,friday_all_day,1
+periurban_fri,,Cristian,Cristian,green_fridays,friday_all_day,1
 periurban_fri,,Feldioara,Feldioara,green_fridays,friday_all_day,1
 periurban_fri,,Predeal,Predeal,green_fridays,friday_all_day,1
 periurban_fri,,Prejmer,Prejmer,green_fridays,friday_all_day,1
 periurban_fri,,Prejmer,Teliu,green_fridays,friday_all_day,1
 periurban_fri,,Sanpetru,Bod,green_fridays,friday_all_day,1
 periurban_fri,,Sanpetru,Sanpetru,green_fridays,friday_all_day,1
+periurban_fri,,Tarlungeni,Tarlungeni,green_fridays,friday_all_day,1
 periurban_fri,,Teliu,Prejmer,green_fridays,friday_all_day,1
 periurban_fri,,Teliu,Teliu,green_fridays,friday_all_day,1
 periurban_fri,,Teliu,VamaBuzaului,green_fridays,friday_all_day,1

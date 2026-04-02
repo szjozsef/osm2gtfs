@@ -73,6 +73,12 @@ zone_1,,Harman,Brasov,zone_1_product,,0
 zone_1,,PoduOltului,Brasov,zone_1_product,,0
 zone_1,,Sacele,Brasov,zone_1_product,,0
 zone_1,,Sanpetru,Brasov,zone_1_product,,0
+zone_1_fri,,Brasov,Codlea,green_fridays,friday_all_day,1
+zone_1_fri,,Brasov,Cristian,green_fridays,friday_all_day,1
+zone_1_fri,,Brasov,Sanpetru,green_fridays,friday_all_day,1
+zone_1_fri,,Codlea,Brasov,green_fridays,friday_all_day,1
+zone_1_fri,,Cristian,Brasov,green_fridays,friday_all_day,1
+zone_1_fri,,Sanpetru,Brasov,green_fridays,friday_all_day,1
 zone_2,,Bod,Brasov,zone_2_product,,0
 zone_2,,Brasov,Bod,zone_2_product,,0
 zone_2,,Brasov,Halchiu,zone_2_product,,0
@@ -87,6 +93,12 @@ zone_2,,Rasnov,Brasov,zone_2_product,,0
 zone_2,,Tarlungeni,Brasov,zone_2_product,,0
 zone_2,,Vulcan,Brasov,zone_2_product,,0
 zone_2,,Zarnesti,Brasov,zone_2_product,,0
+zone_2_fri,,Bod,Brasov,green_fridays,friday_all_day,1
+zone_2_fri,,Brasov,Bod,green_fridays,friday_all_day,1
+zone_2_fri,,Brasov,Prejmer,green_fridays,friday_all_day,1
+zone_2_fri,,Brasov,Tarlungeni,green_fridays,friday_all_day,1
+zone_2_fri,,Prejmer,Brasov,green_fridays,friday_all_day,1
+zone_2_fri,,Tarlungeni,Brasov,green_fridays,friday_all_day,1
 zone_3,,Brasov,Feldioara,zone_3_product,,0
 zone_3,,Brasov,Predeal,zone_3_product,,0
 zone_3,,Brasov,Teliu,zone_3_product,,0
@@ -95,3 +107,11 @@ zone_3,,Feldioara,Brasov,zone_3_product,,0
 zone_3,,Predeal,Brasov,zone_3_product,,0
 zone_3,,Teliu,Brasov,zone_3_product,,0
 zone_3,,VamaBuzaului,Brasov,zone_3_product,,0
+zone_3_fri,,Brasov,Feldioara,green_fridays,friday_all_day,1
+zone_3_fri,,Brasov,Predeal,green_fridays,friday_all_day,1
+zone_3_fri,,Brasov,Teliu,green_fridays,friday_all_day,1
+zone_3_fri,,Brasov,VamaBuzaului,green_fridays,friday_all_day,1
+zone_3_fri,,Feldioara,Brasov,green_fridays,friday_all_day,1
+zone_3_fri,,Predeal,Brasov,green_fridays,friday_all_day,1
+zone_3_fri,,Teliu,Brasov,green_fridays,friday_all_day,1
+zone_3_fri,,VamaBuzaului,Brasov,green_fridays,friday_all_day,1

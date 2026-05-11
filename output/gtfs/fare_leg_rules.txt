@@ -38,10 +38,13 @@ periurban_fri,,Bod,Bod,green_fridays,friday_all_day,1
 periurban_fri,,Bod,Sanpetru,green_fridays,friday_all_day,1
 periurban_fri,,Codlea,Codlea,green_fridays,friday_all_day,1
 periurban_fri,,Cristian,Cristian,green_fridays,friday_all_day,1
+periurban_fri,,Cristian,Rasnov,green_fridays,friday_all_day,1
 periurban_fri,,Feldioara,Feldioara,green_fridays,friday_all_day,1
 periurban_fri,,Predeal,Predeal,green_fridays,friday_all_day,1
 periurban_fri,,Prejmer,Prejmer,green_fridays,friday_all_day,1
 periurban_fri,,Prejmer,Teliu,green_fridays,friday_all_day,1
+periurban_fri,,Rasnov,Cristian,green_fridays,friday_all_day,1
+periurban_fri,,Rasnov,Rasnov,green_fridays,friday_all_day,1
 periurban_fri,,Sanpetru,Bod,green_fridays,friday_all_day,1
 periurban_fri,,Sanpetru,Sanpetru,green_fridays,friday_all_day,1
 periurban_fri,,Tarlungeni,Tarlungeni,green_fridays,friday_all_day,1
@@ -96,8 +99,10 @@ zone_2,,Zarnesti,Brasov,zone_2_product,,0
 zone_2_fri,,Bod,Brasov,green_fridays,friday_all_day,1
 zone_2_fri,,Brasov,Bod,green_fridays,friday_all_day,1
 zone_2_fri,,Brasov,Prejmer,green_fridays,friday_all_day,1
+zone_2_fri,,Brasov,Rasnov,green_fridays,friday_all_day,1
 zone_2_fri,,Brasov,Tarlungeni,green_fridays,friday_all_day,1
 zone_2_fri,,Prejmer,Brasov,green_fridays,friday_all_day,1
+zone_2_fri,,Rasnov,Brasov,green_fridays,friday_all_day,1
 zone_2_fri,,Tarlungeni,Brasov,green_fridays,friday_all_day,1
 zone_3,,Brasov,Feldioara,zone_3_product,,0
 zone_3,,Brasov,Predeal,zone_3_product,,0

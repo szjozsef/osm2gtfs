@@ -46,7 +46,6 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 420,RO-RATBV,420,"Brașov - Sânpetru - Bod","Bus 420",3,https://osm.org/relation/13369964,4ea74b,FFFFFF,
 5,RO-RATBV,5,"Roman - Stadionul Municipal","Bus 5",3,https://osm.org/relation/5397476,ec2738,ffffff,
 50,RO-RATBV,50,"Camera de Comerț - Solomon","Minibus 50",3,https://osm.org/relation/5410164,d0006e,ffffff,
-510,RO-RATBV,510,"Brașov - Hărman","Bus 510",3,https://osm.org/relation/20500850,4ea74b,FFFFFF,
 511,RO-RATBV,511,"Brașov - Hărman - Podu Oltului","Bus 511",3,https://osm.org/relation/13387449,4ea74b,FFFFFF,
 52,RO-RATBV,52,"Tocile - Roman / Panselelor","Bus 52",3,https://osm.org/relation/5410210,9ad3dc,000000,
 520,RO-RATBV,520,"Brașov - Prejmer - Lunca Câlnicului","Bus 520",3,https://osm.org/relation/13390536,4ea74b,FFFFFF,

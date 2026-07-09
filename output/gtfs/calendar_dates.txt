@@ -1,6 +1,4 @@
 service_id,date,exception_type
-TE:Mo-Fr,20260706,2
-TE:Mo-Fr,20260707,2
 TE:Mo-Fr,20260708,2
 TE:Mo-Fr,20260709,2
 TE:Mo-Fr,20260710,2

@@ -191,6 +191,14 @@ class TripsCreatorRoRatbv(TripsCreator):
             gtfs_service.set_id = service
             gtfs_service.SetWeekdayService(True)
             gtfs_service.SetWeekendService(False)
+        elif service == "TV:Mo-Fr":
+            # Weekday trips that run only on school-holiday weekdays (the counterpart of TE:Mo-Fr).
+            # Weekly pattern Mo-Fr; gtfs-gen's generate_calendar_dates.py removes it on every
+            # weekday with courses (calendar_dates.txt), and on public holidays.
+            gtfs_service = ServicePeriod(service)
+            gtfs_service.set_id = service
+            gtfs_service.SetWeekdayService(True)
+            gtfs_service.SetWeekendService(False)
         elif service == "Mo-Sa":
             gtfs_service = ServicePeriod(service)
             gtfs_service.SetWeekdayService(True)
@@ -244,6 +252,21 @@ class TripsCreatorRoRatbv(TripsCreator):
             # while (startdate <= enddate):
             #    gtfs_service.SetDateHasService(startdate.strftime("%Y%m%d"))
             #    startdate += delta
+        elif re.search(r'^[0-9]{4}-?[0-9]{2}-?[0-9]{2}(,[0-9]{4}-?[0-9]{2}-?[0-9]{2})+$', service):
+            # A list of single days ("2026-11-02,2026-11-04"), e.g. a line that runs only on some days of
+            # its validity period. Service id: the days joined with '_' (no ',' in the id).
+            days = sorted(set(d.replace('-', '') for d in service.split(',')))
+            for d in days:
+                datetime.strptime(d, "%Y%m%d")  # rejects impossible dates
+            service = '_'.join(days)
+            gtfs_service = ServicePeriod(service)
+            gtfs_service.set_id = service
+            gtfs_service.SetWeekdayService(False)
+            gtfs_service.SetWeekendService(False)
+            for d in days:
+                gtfs_service.SetDateHasService(d)
+            start_date = days[0]
+            end_date = days[-1]
         else:
             raise KeyError("Unknown service keyword: " + service)
         try:

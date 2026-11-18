@@ -12,14 +12,149 @@ from pprint import pprint
 import re
 from datetime import datetime, date, timedelta
 import unicodedata
+import json
+import os
 
 class TripsCreatorRoRatbv(TripsCreator):
 
+    BIKES_ALLOWED_VALUES = ("0", "1", "2")
+
+    def _bikes_allowed_rules(self):
+        """
+        Per-route bikes_allowed seasons from the JSON file named by the config key "bikes_allowed"
+        (path relative to the working directory, like "schedule_source"); {} when the key is absent.
+
+        File format:
+          {"routes": {"20": {"default": "2",
+                             "seasons": [{"start": "2027-04-01", "end": "2027-10-31",
+                                          "bikes_allowed": "1"}]}}}
+        "default" applies outside the seasons; dates are inclusive. For a listed route the file
+        replaces the route relation's bicycle= tag. Any error in the file stops the run.
+        """
+        if hasattr(self, "_bikes_rules"):
+            return self._bikes_rules
+        rules = {}
+        path = self.config.get("bikes_allowed")
+        if path:
+            with open(path, encoding="utf-8") as fh:
+                data = json.load(fh)
+            routes = data.get("routes")
+            if not isinstance(routes, dict):
+                raise ValueError("%s: 'routes' must be an object" % path)
+            for route_id, rule in routes.items():
+                where = "%s: route %s" % (path, route_id)
+                default = rule.get("default")
+                if default not in self.BIKES_ALLOWED_VALUES:
+                    raise ValueError("%s: 'default' must be one of %s" % (where, self.BIKES_ALLOWED_VALUES))
+                seasons = []
+                for season in rule.get("seasons", []):
+                    value = season.get("bikes_allowed")
+                    if value not in self.BIKES_ALLOWED_VALUES:
+                        raise ValueError("%s: season 'bikes_allowed' must be one of %s" % (where, self.BIKES_ALLOWED_VALUES))
+                    try:
+                        start = datetime.strptime(season["start"], "%Y-%m-%d").date()
+                        end = datetime.strptime(season["end"], "%Y-%m-%d").date()
+                    except (KeyError, TypeError, ValueError) as e:
+                        raise ValueError("%s: season %r needs 'start' and 'end' as YYYY-MM-DD dates (%s)"
+                                         % (where, season, e))
+                    if end < start:
+                        raise ValueError("%s: season %s..%s ends before it starts" % (where, season["start"], season["end"]))
+                    seasons.append((start, end, value))
+                seasons.sort()
+                for (s1, e1, _v1), (s2, _e2, _v2) in zip(seasons, seasons[1:]):
+                    if s2 <= e1:
+                        raise ValueError("%s: seasons starting %s and %s overlap" % (where, s1, s2))
+                rules[str(route_id)] = {"default": default, "seasons": seasons}
+                logging.info("bikes_allowed for route %s: default %s, seasons %s", route_id, default,
+                             ", ".join("%s..%s=%s" % s for s in seasons) or "none")
+        self._bikes_rules = rules
+        return rules
+
+    def _bikes_allowed_periods(self, feed, base, rule):
+        """
+        Split the service period base by the route's bike seasons: a list of
+        (service period, bikes_allowed). One period with the same value everywhere keeps the base
+        service; otherwise every part is a copy of base limited to that part's dates, with the id
+        "<base id>@<YYYYMMDD>-<YYYYMMDD>" (generate_calendar_dates.py gives it the base's exceptions).
+        """
+        lo = datetime.strptime(base.start_date, "%Y%m%d").date()
+        hi = datetime.strptime(base.end_date, "%Y%m%d").date()
+        added = [datetime.strptime(d, "%Y%m%d").date()
+                 for d, (etype, _c) in base.date_exceptions.items() if etype == 1]
+        if added:
+            lo = min([lo] + added)
+            hi = max([hi] + added)
+        parts = []
+        cursor = lo
+        for start, end, value in rule["seasons"]:
+            if end < lo or start > hi:
+                continue
+            if start > cursor:
+                parts.append([cursor, start - timedelta(days=1), rule["default"]])
+            parts.append([max(start, lo), min(end, hi), value])
+            cursor = min(end, hi) + timedelta(days=1)
+        if cursor <= hi:
+            parts.append([cursor, hi, rule["default"]])
+        merged = []
+        for part in parts:
+            if merged and merged[-1][2] == part[2] and merged[-1][1] + timedelta(days=1) == part[0]:
+                merged[-1][1] = part[1]
+            else:
+                merged.append(part)
+        if len(merged) == 1:
+            return [(base, merged[0][2])]
+        result = []
+        for start, end, value in merged:
+            s_ymd = start.strftime("%Y%m%d")
+            e_ymd = end.strftime("%Y%m%d")
+            exceptions = {d: x for d, x in base.date_exceptions.items() if s_ymd <= d <= e_ymd}
+            runs_weekly = any(base.day_of_week) and not (e_ymd < base.start_date or s_ymd > base.end_date)
+            if not runs_weekly and not any(x[0] == 1 for x in exceptions.values()):
+                continue
+            service_id = "%s@%s-%s" % (base.service_id, s_ymd, e_ymd)
+            try:
+                period = feed.GetServicePeriod(service_id)
+            except KeyError:
+                period = None
+            if period is None:
+                period = ServicePeriod(service_id)
+                period.day_of_week = list(base.day_of_week)
+                for d, (etype, _c) in exceptions.items():
+                    period.SetDateHasService(d, etype == 1)
+                period_start = max(s_ymd, base.start_date)
+                period_end = min(e_ymd, base.end_date)
+                if period_start > period_end:
+                    # only added dates of base fall into this part
+                    period_start, period_end = s_ymd, e_ymd
+                period.SetStartDate(period_start)
+                period.SetEndDate(period_end)
+                feed.AddServicePeriodObject(period)
+                period = feed.GetServicePeriod(service_id)
+            result.append((period, value))
+        return result
 
     def _add_itinerary_trips(self, feed, itinerary, line, trip_builder,
                              shape_id):
         """
-        Add all trips of an itinerary to the GTFS feed.
+        Add all trips of an itinerary to the GTFS feed; a route with bikes_allowed seasons gets its
+        trips once per season part (see _bikes_allowed_periods).
+        """
+        rule = self._bikes_allowed_rules().get(str(line.route_id))
+        if rule is None:
+            return self._add_itinerary_trips_for_period(feed, itinerary, line, trip_builder, shape_id, None)
+        trips_count = 0
+        for period, bikes_allowed in self._bikes_allowed_periods(feed, trip_builder['service_period'], rule):
+            part_builder = dict(trip_builder)
+            part_builder['service_period'] = period
+            trips_count += self._add_itinerary_trips_for_period(feed, itinerary, line, part_builder,
+                                                                shape_id, bikes_allowed)
+        return trips_count
+
+    def _add_itinerary_trips_for_period(self, feed, itinerary, line, trip_builder,
+                                        shape_id, bikes_allowed):
+        """
+        Add all trips of an itinerary to the GTFS feed for trip_builder's service period;
+        bikes_allowed, when not None, replaces the value derived from the route's bicycle= tag.
         """
         # Obtain GTFS route to add trips to it.
         route = feed.GetRoute(line.route_id)
@@ -156,7 +291,9 @@ class TripsCreatorRoRatbv(TripsCreator):
                 # Add empty attributes to make navitia happy
                 gtfs_trip.block_id = ""
                 gtfs_trip.wheelchair_accessible = "1"
-                if line.route_bikes_allowed is not None:
+                if bikes_allowed is not None:
+                    gtfs_trip.bikes_allowed = bikes_allowed
+                elif line.route_bikes_allowed is not None:
                     if line.route_bikes_allowed == "yes":
                         gtfs_trip.bikes_allowed = "1"
                     else:
